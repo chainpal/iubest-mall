@@ -94,16 +94,17 @@ swiper{
   display: flex;
   margin:0 10px;
   justify-content:space-between;
+  overflow: hidden;
 }
 
 .price text{
   font-size: 16px;
   color: #ff5f19;
 }
-
 .price image{
   display: block;
   width: 20px;
   height: 20px;
   padding-top: 2px;
+  /* background-image: url('/images/Shopping.png'); */
 }

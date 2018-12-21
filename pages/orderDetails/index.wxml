@@ -1,4 +1,4 @@
-<view style='height:100vh'>
+  <view style='height:100vh'>
   <scroll-view scroll-y style='height:92vh'>
     <view class='title'>
       <view class='left'>
@@ -30,26 +30,11 @@
         <view>{{address.city[0]}} {{address.city[1]}} {{address.city[2]}} {{address.detailed}}</view>
       </view>
        <view class='choice'>
-        <image style='width:8px;height:15px;' src='/images/my_order.png'></image>
+        <image style='width:8px;height:14px;' src='/images/my_order.png'></image>
       </view>
     </navigator>
     <view class='title' style='border-top:1px solid #dedede;'>
-      <!-- <view class='left'>
-        发票信息
-      </view> -->
-      <view class='right'>
-        <image src='/images/my_order.png'></image>
-      </view>
     </view>
-    <!-- <view class='title'>
-      <view class='left'>
-        <!-- 优惠券 -->
-      <!-- </view> -->
-      <!-- <view class='right'>
-        <text>满200减50优惠券</text>
-        <image src='/images/my_order.png'></image>
-      </view>
-    </view> -->
     <view class='title'>
       <view class='left'>
         商品价格
@@ -88,7 +73,7 @@
       </view>
     </view>
   </scroll-view>
-  <navigator class='btn'>
+  <navigator class='btn' url='/pages/cart/index'>
   支付
   </navigator>
 </view>

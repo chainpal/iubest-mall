@@ -32,8 +32,8 @@ Page({
   },
   onLoad: function (options) {
     this.setData({
-      id: app.globalData.userInfo.address._id,
-      state: options ? options.type:null
+      // id: app.globalData.userInfo.address._id,
+      // state: options ? options.type:null
     })
   },
 

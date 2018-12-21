@@ -33,13 +33,13 @@ Page({
       price: item.price,
     }, "POST")
       .then(res => {
-        console.log(res.item._id)
+        // console.log(res.item._id)
         var item_id = wx.getStorageSync('item._id');
         if (res.code == 200) {
           wx.showToast({
             title: '已加入购物车',
             icon: 'success',
-            duration: 500
+            duration: 2000
           })
         }
       })
@@ -97,7 +97,7 @@ Page({
           }
           this.setData({
             list: list,
-            page: this.data.page
+            // page: this.data.page
           })
           console.log(this.data)
         } else{

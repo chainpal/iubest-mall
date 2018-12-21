@@ -40,8 +40,10 @@
 }
 
 .item image{
-  width: 8px;
-  height: 15px;
+  width: 8.5px;
+  height: 14.5px;
+  /* width: 8px;
+  height: 15px; */
 }
 
 .item text{
