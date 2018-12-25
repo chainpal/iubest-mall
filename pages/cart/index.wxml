@@ -11,8 +11,10 @@
   <scroll-view scroll-y class='list' style='height:82vh'>
     <view class='item' wx:if="{{!isEdit}}" wx:for="{{list}}">
       <view class='label' bindtap="labelFun" data-id="{{item.id}}">
-        <image wx:if="{{item.select}}" src='/images/choice_y.png'></image>
-        <image wx:else src='/images/choice_n.png'></image>
+        <view class='a' wx:if="{{!item.select}}" style="background-image: url('/images/css.png'); " ></view>
+        <view class='b' wx:else  style="background-image: url('/images/css.png'); " ></view>
+        <!-- <image wx:if="{{item.select}}" src='/images/choice_y.png'></image>
+        <image wx:else src='/images/choice_n.png'></image> -->
       </view>
       <navigator class='content' hover-class="none" url="/pages/details/index?id={{item.id}}">
         <image src='{{item.img}}'></image>
@@ -28,8 +30,10 @@
     </view>
     <view class='item edit' wx:if="{{isEdit}}"  wx:for="{{list}}">
       <view class='label' bindtap="labelFun" data-id="{{item.id}}">
-        <image wx:if="{{item.select}}" src='/images/choice_y.png'></image>
-        <image wx:else src='/images/choice_n.png'></image>
+        <view class='b' wx:if="{{!item.select}}" style="background-image: url('/images/css.png'); " ></view>
+        <view class='a' wx:else style="background-image: url('/images/css.png'); " ></view>
+        <!-- <image wx:if="{{item.select}}" src='/images/choice_y.png'></image>
+        <image wx:else src='/images/choice_n.png'></image> -->
       </view>
       <view class='content'>
         <image src='{{item.img}}'></image>
@@ -54,8 +58,10 @@
     <view class='left'>
       <view class='text'>
         <view class='label' style='padding-left:16px;' bindtap='totalFun'>
-          <image wx:if="{{total}}" src='/images/choice_y.png'></image>
-          <image wx:else src='/images/choice_n.png'></image>
+          <image class='a' wx:if="{{!total}}"  style="background-image: url('/images/css.png'); " ></image>
+          <image class='b' wx:else style="background-image: url('/images/css.png'); " ></image>
+          <!-- <image wx:if="{{total}}" src='/images/choice_y.png'></image>
+          <image wx:else src='/images/choice_n.png'></image> -->
         </view>
         <text style='padding-left:10px;'>全选</text>
       </view>

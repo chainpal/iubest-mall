@@ -29,8 +29,10 @@
       </navigator>
       <view class='price'>
         <text>￥{{item.price}}</text>
-        <view  bindtap='addCart' data-item="{{item}}" class='whole'>
-        <image style='width:20px;height:20px;' src='/images/Shopping.png'></image>
+        <view bindtap='addCart' data-item="{{item}}">
+        <!-- <image style='width:20px;height:20px;' src='/images/Shopping.png'></image> -->
+        <view style="background-image: url('/images/css.png'); " bindtap='addCart' data-item="{{item}}" class='whole'>
+        </view>
         </view>
       </view>
     </view>

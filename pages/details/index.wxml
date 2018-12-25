@@ -71,7 +71,8 @@
 </scroll-view>
 <view class='bottom'>
 <view class='icon' bindtap='goShopCar'>
-    <image src='/images/shopping_cart_return.png' style='width:20px;height:17px;'></image>
+    <!-- <image src='/images/shopping_cart_return.png' style='width:20px;height:17px;'></image> -->
+    <view class='a' style="background-image: url('/images/css.png'); " ></view>
     <text>购物车</text>
 </view>
  <!-- bindtap='specFun' -->

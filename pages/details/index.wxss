@@ -55,9 +55,17 @@ swiper{
   font-size: 10px;
   text-align: center;
 }
-.bottom .icon image{
+.bottom .icon .a{
+  margin: 0 auto;
   padding-top: 5px;
+  width: 20px;
+  height: 17px;
+  background-repeat: no-repeat;
+  background-position:  -90px -106px;
 }
+/* .bottom .icon image{
+  padding-top: 5px;
+} */
 .bottom .icon text{
   display: block;
   color: #666666;

@@ -14,14 +14,32 @@
   flex: 1 0 10%;
   text-align: center;
 }
-.item .edit image{
+/* .item .edit image{
   width: 20px;
   height: 20px;
-}
-.item .choice image{
+} */
+.item .edit{
   width: 20px;
   height: 20px;
+  background-repeat: no-repeat;
+  background-position:  -10px -106px;
 }
+.item .a{
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-position:  -110px -10px;
+}
+.item .b{
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-position:  -110px -50px;
+}
+/* .item .choice image{
+  width: 20px;
+  height: 20px;
+} */
 
 .btn{
   height: 8vh;

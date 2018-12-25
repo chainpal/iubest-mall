@@ -22,8 +22,8 @@
           {{region[0]}} {{region[1]}} {{region[2]}}
         </view>
       </picker>
-      <view class='icon'>
-      <image src='/images/my_order.png'></image>
+      <view class='icon' style="background-image: url('/images/css.png'); " >
+      <!-- <image src='/images/my_order.png'></image> -->
       </view>
     </view>
      <view class='item'>

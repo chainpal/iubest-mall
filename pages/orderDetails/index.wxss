@@ -112,10 +112,18 @@
   width: 20px;
   height: 20px;
 }
-.address .choice image{
+.address .choice .a{
   width: 20px;
   height: 20px;
+  background-repeat: no-repeat;
+  background-position:  -150px -10px;
+  margin-top: 10px;
+  margin-left: 15px;
 }
+/* .address .choice image{
+  width: 20px;
+  height: 20px;
+} */
 .price{
  margin: 0 16px;
  padding: 0;

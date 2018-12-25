@@ -42,6 +42,11 @@
 .item .icon{
   flex: 0 1 10%;
   text-align: right;
+  width:8px;
+  height:15px;
+  background-repeat: no-repeat;
+  background-position:  -150px -10px;
+  margin-top: 10px;
 }
 
 .item picker{
@@ -49,10 +54,10 @@
  font-size:16px;
 }
 
-.item .icon image{
+/* .item .icon image{
   width:8px;
   height:15px;
-}
+} */
 
 .text{
   font-size: 12px;

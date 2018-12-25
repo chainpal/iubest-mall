@@ -30,7 +30,8 @@
         <view>{{address.city[0]}} {{address.city[1]}} {{address.city[2]}} {{address.detailed}}</view>
       </view>
        <view class='choice'>
-        <image style='width:8px;height:14px;' src='/images/my_order.png'></image>
+        <!-- <image style='width:8px;height:14px;' src='/images/my_order.png'></image> -->
+        <view class='a' style="background-image: url('/images/css.png'); " ></view>
       </view>
     </navigator>
     <view class='title' style='border-top:1px solid #dedede;'>

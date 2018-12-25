@@ -26,11 +26,25 @@
   height:20px;
 }
 
-.label image {
+.label .a {
+  display: block;
+  width: 20px;
+  height: 26px;
+  background-repeat: no-repeat;
+  background-position:  -110px -10px;
+}
+.label .b {
   display: block;
   width: 20px;
   height: 20px;
+  background-repeat: no-repeat;
+  background-position:  -110px -50px;
 }
+/* .label image {
+  display: block;
+  width: 20px;
+  height: 20px;
+} */
 
 .list .item{
   display: flex;
