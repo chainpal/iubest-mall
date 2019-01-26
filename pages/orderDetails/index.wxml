@@ -74,7 +74,8 @@
       </view>
     </view>
   </scroll-view>
-  <navigator class='btn' url='/pages/cart/index'>
+  <navigator class='btn' bindtap='gopay'>
+  <!-- <navigator class='btn' url='/pages/cart/index'> -->
   支付
   </navigator>
 </view>

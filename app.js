@@ -14,6 +14,7 @@ App({
           const app = getApp()
           app.globalData.openid = res.data.openid
           app.globalData.userInfo = res.data
+          console.log(res.data.openid)
           if (!res.data.mobile) {
            /** wx.reLaunch({
               url: "/pages/bindPhone/index"
@@ -86,6 +87,6 @@ App({
   
   globalData: {
     userInfo: null,
-    openid:null
+    openid: "mocked_openid"
   }
 })

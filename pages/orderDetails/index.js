@@ -27,7 +27,58 @@ Page({
     address:null,
     data:null
   },
+  gopay: function () {
+    // wx.navigateTo({
+    //   url: '../detail/detail'
+    // })
+    var that = this;
+    var nonce = Math.floor((Math.random() + Math.floor(Math.random() * 9 + 1)) * Math.pow(10, 8));
+    nonce = nonce.toString()
+    var total = that.data.sumMonney - that.data.cutMonney
+    console.log(nonce)
+    console.log(total)
+    console.log(nonce + "a" + total)
 
+    wx.request({
+      // url: app.globalData.apiHost + '/wxPay?openid=' + wx.getStorageSync('openId'),
+      url: 'http://localhost:7002/wxPay?openid=mocked_openid',
+      method: 'POST',
+      data: {
+        "nonce_str": nonce + "a" + total
+      },
+      dataType: 'json',
+      header: {
+        'content-type': 'application/json'
+      },
+      success: function (res) {
+        console.log(res)
+        if (res.data.code == 0) {
+          var payModel = res.data.msg;
+          wx.requestPayment({
+            'timeStamp': payModel.timestamp,
+            'nonceStr': payModel.nonceStr,
+            'package': payModel.package,
+            'signType': 'MD5',
+            'paySign': payModel.paySign,
+            'success': function (res) {
+              wx.showToast({
+                title: '支付成功',
+                icon: 'success',
+                duration: 2000
+              })
+              console.log("dasda", payModel.package.substr(10))
+              that.addOrder(payModel.out_trade_no, payModel.package.substr(10))
+            },
+            'fail': function (res) {
+            }
+          })
+        }
+      },
+      fail: function () {
+
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
