@@ -27,56 +27,84 @@ Page({
     address:null,
     data:null
   },
-  gopay: function () {
-    // wx.navigateTo({
-    //   url: '../detail/detail'
-    // })
-    var that = this;
-    var nonce = Math.floor((Math.random() + Math.floor(Math.random() * 9 + 1)) * Math.pow(10, 8));
-    nonce = nonce.toString()
-    var total = that.data.sumMonney - that.data.cutMonney
-    console.log(nonce)
-    console.log(total)
-    console.log(nonce + "a" + total)
+  // gopay: function () {
+  //   // wx.navigateTo({
+  //   //   url: '../detail/detail'
+  //   // })
+  //   var that = this;
+  //   var nonce = Math.floor((Math.random() + Math.floor(Math.random() * 9 + 1)) * Math.pow(10, 8));
+  //   nonce = nonce.toString()
+  //   var total = that.data.totalPrice;
+  //   // total = total.toString();
+  //   console.log(nonce)
+  //   console.log(total)
+  //   console.log(nonce + "a" + total)
 
+  //   wx.request({
+  //     // url: app.globalData.apiHost + '/wxPay?openid=' + wx.getStorageSync('openId'),
+  //     url: 'http://localhost:3000/pay',
+  //     // method: 'get',
+  //     // data: {
+  //     //   "money": "1000",
+  //     // },
+  //     // dataType: 'json',
+  //     // header: {
+  //     //   'content-type': 'application/json'
+  //     // },
+  //     success: function (res) {
+  //       console.log(res)
+  //       console.log(res.data.appId)
+  //       if (res.data.code == 0) {
+  //         var payModel = res.data.msg;
+  //         wx.requestPayment({
+  //           'timeStamp': payModel.timestamp,
+  //           'nonceStr': payModel.nonceStr,
+  //           'package': payModel.package,
+  //           'signType': 'MD5',
+  //           'paySign': payModel.paySign,
+  //           'success': function (res) {
+  //             wx.showToast({
+  //               title: '支付成功',
+  //               icon: 'success',
+  //               duration: 2000
+  //             })
+  //             console.log("dasda", payModel.package.substr(10))
+  //             that.addOrder(payModel.out_trade_no, payModel.package.substr(10))
+  //           },
+  //           'fail': function (res) {
+  //           }
+  //         })
+  //       }
+  //     },
+  //     fail: function () {
+
+  //     }
+  //   })
+  // },
+  gopay:function(){
     wx.request({
-      // url: app.globalData.apiHost + '/wxPay?openid=' + wx.getStorageSync('openId'),
-      url: 'http://localhost:7002/wxPay?openid=mocked_openid',
-      method: 'POST',
-      data: {
-        "nonce_str": nonce + "a" + total
-      },
-      dataType: 'json',
-      header: {
-        'content-type': 'application/json'
-      },
+      url: 'http://localhost:3000/pay',
       success: function (res) {
-        console.log(res)
-        if (res.data.code == 0) {
-          var payModel = res.data.msg;
-          wx.requestPayment({
-            'timeStamp': payModel.timestamp,
-            'nonceStr': payModel.nonceStr,
-            'package': payModel.package,
-            'signType': 'MD5',
-            'paySign': payModel.paySign,
-            'success': function (res) {
-              wx.showToast({
-                title: '支付成功',
-                icon: 'success',
-                duration: 2000
-              })
-              console.log("dasda", payModel.package.substr(10))
-              that.addOrder(payModel.out_trade_no, payModel.package.substr(10))
-            },
-            'fail': function (res) {
-            }
-          })
-        }
-      },
-      fail: function () {
-
+        console.log(res);
+        console.log(res.data.appId);
+        wx.requestPayment({
+          'timeStamp': res.data.timeStamp,
+          'nonceStr': res.data.nonceStr,
+          'package': res.data.package,
+          'signType': 'MD5',
+          'paySign': res.data.paySign,
+          'success': function (res) {
+            console.log("成功");
+          },
+          'fail': function (res) {
+            console.log(res);
+          },
+          complete: function (res) {
+            console.log(res);
+          }
+        })
       }
+
     })
   },
   /**
